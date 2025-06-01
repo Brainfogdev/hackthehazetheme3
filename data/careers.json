@@ -1,0 +1,30 @@
+[
+  {
+    "id": "upsc_ias",
+    "title": "IAS Officer (UPSC)",
+    "required_skills": ["General Knowledge", "Essay Writing", "Current Affairs"],
+    "streams": ["Any"],
+    "exams": ["UPSC CSE"]
+  },
+  {
+    "id": "neet_doctor",
+    "title": "Medical Doctor (NEET)",
+    "required_skills": ["Biology", "Chemistry", "Empathy"],
+    "streams": ["Science"],
+    "exams": ["NEET"]
+  },
+  {
+    "id": "jee_engineer",
+    "title": "Software Engineer (JEE)",
+    "required_skills": ["Python", "Problem Solving", "Mathematics"],
+    "streams": ["Engineering"],
+    "exams": ["JEE"]
+  },
+  {
+    "id": "ca_accountant",
+    "title": "Chartered Accountant",
+    "required_skills": ["Accounting", "Taxation", "Finance"],
+    "streams": ["Commerce"],
+    "exams": ["CA"]
+  }
+]
