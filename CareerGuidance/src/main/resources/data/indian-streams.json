@@ -1,0 +1,29 @@
+[
+  {
+    "streamName": "Science",
+    "level": "12th",
+    "subjects": ["Physics", "Chemistry", "Mathematics", "Biology"],
+    "commonExams": ["JEE Main", "JEE Advanced", "NEET", "BITSAT", "VITEEE"],
+    "careerOptions": ["Engineering", "Medical", "Research", "Technology", "Biotechnology"],
+    "topColleges": ["IIT Delhi", "IIT Bombay", "IIT Madras", "AIIMS Delhi", "BITS Pilani"],
+    "description": "Science stream focuses on scientific subjects and prepares students for technical careers"
+  },
+  {
+    "streamName": "Commerce",
+    "level": "12th",
+    "subjects": ["Accountancy", "Business Studies", "Economics", "Mathematics"],
+    "commonExams": ["CA Foundation", "CS Foundation", "CMA Foundation", "CLAT", "IPMAT"],
+    "careerOptions": ["Chartered Accountancy", "Banking", "Finance", "Business Management", "Economics"],
+    "topColleges": ["SRCC Delhi", "LSR Delhi", "Christ University", "NMIMS Mumbai"],
+    "description": "Commerce stream focuses on business and finance subjects"
+  },
+  {
+    "streamName": "Arts/Humanities",
+    "level": "12th",
+    "subjects": ["History", "Political Science", "Geography", "Literature", "Psychology"],
+    "commonExams": ["CLAT", "UPSC", "State PSC", "JNU Entrance", "BHU UET"],
+    "careerOptions": ["Civil Services", "Law", "Journalism", "Teaching", "Social Work"],
+    "topColleges": ["JNU Delhi", "BHU Varanasi", "Jadavpur University", "DU Delhi"],
+    "description": "Arts stream focuses on humanities and social sciences"
+  }
+]

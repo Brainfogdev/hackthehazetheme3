@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Career Guidance Engine</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>🎓 Career Guidance Engine</h1>
+
+    <form id="profileForm">
+        <h2>Create Student Profile</h2>
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="number" id="age" placeholder="Age" required />
+        <input type="text" id="currentClass" placeholder="Class (e.g., 12th)" required />
+        <input type="text" id="currentStream" placeholder="Stream (e.g., Science)" required />
+        <input type="text" id="subjects" placeholder="Subjects (comma-separated)" required />
+        <input type="text" id="interests" placeholder="Interests (comma-separated)" />
+        <input type="text" id="skills" placeholder="Skills (comma-separated)" />
+        <input type="text" id="careerAspirations" placeholder="Aspirations (comma-separated)" />
+        <input type="text" id="academicPerformance" placeholder="Performance (Excellent/Good/etc.)" />
+        <input type="text" id="location" placeholder="Location" />
+        <input type="text" id="familyBackground" placeholder="Family Background" />
+        <input type="text" id="economicStatus" placeholder="Economic Status" />
+        <button type="submit">Create Profile</button>
+    </form>
+
+    <hr />
+
+    <h2>Student Profiles</h2>
+    <button onclick="loadProfiles()">Load Profiles</button>
+    <ul id="profilesList"></ul>
+
+    <hr />
+
+    <h2>Career Recommendations</h2>
+    <input type="number" id="recommendationId" placeholder="Enter Student ID" />
+    <button onclick="getRecommendations()">Get Recommendations</button>
+    <ul id="recommendationsList"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

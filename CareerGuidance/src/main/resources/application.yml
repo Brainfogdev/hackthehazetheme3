@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:careerdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: pass
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+
+llm:
+  api:
+    base-url: ${BASE_URL}
+    key: ${API_KEY}
+    model: ${LLM_MODEL}
+    max-tokens: ${TOKEN_NUMBER}
+
+
+
