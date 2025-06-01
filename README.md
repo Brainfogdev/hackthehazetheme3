@@ -1,171 +1,204 @@
+# CareerQuestAI (Streamlit)
 
-# 🧠 Hack The Haze – Open Mind Challenge
+CareerQuestAI is a Streamlit-based web application that provides data-driven career guidance for students in India. It uses machine learning to deliver personalized career recommendations based on user interests, aptitude tests, and academic profiles. Designed for the Indian education system, it supports streams like PCM, PCB, Commerce, and Arts, and competitive exams such as JEE, NEET, and UPSC. The app features a bilingual interface (English and Hindi), text or voice input, and stores results in memory for a seamless experience.
 
-Welcome to the official repository for **Hack The Haze – Theme 4**:
-🎯 *AI-Powered Career Guidance Engine for Indian Learners*
-Hosted by [brainfogdev](https://github.com/brainfogdev)
+**GitHub Repository**: github.com/your-username/CareerQuestAI
 
----
+## **Table of Contents**
 
-## 💼 Problem Statement
+- Project Overview
+- Folder Structure
+- Expected Outputs
+- Step-by-Step Working
+- Troubleshooting
 
-> Build an intelligent, personalized, and scalable **AI-powered career guidance system** for the Indian education ecosystem.
-> Your engine should analyze **aptitude, goals, skills, and experience** to recommend optimal **career paths** aligned with Indian academic streams (CBSE/ICSE/State Boards), national-level exams (UPSC, NEET, JEE, CA, etc.), and job market trends.
+## **Project Overview**
 
-You're not just building a tool — you're shaping the future of **career discovery and educational planning** in India.
+CareerQuestAI empowers students to make informed career choices by integrating aptitude assessments, interest analysis, and job market insights. It leverages XGBoost for aptitude predictions, Sentence-BERT for interest matching, and mock job market data for visualizations, all processed locally.
 
----
+### *Key Features*
 
-## 🔍 Objectives
+- **Career Recommendations**: Suggests careers based on interests, academic performance, and exam preferences.
+- **Aptitude Testing**: Offers quizzes for skills like math, biology, verbal, and analytical reasoning, tailored to streams and exams.
+- **Input Flexibility**: Accepts text or voice interests, with transcription via Hugging Face’s Whisper API.
+- **Job Market Insights**: Displays career demand using bar charts with mock data.
+- **Bilingual Support**: Provides English and Hindi interfaces and questions.
+- **Skill Gap Analysis**: Identifies areas for improvement (e.g., technical or communication skills).
+- **Chatbot**: Includes a Grok-powered chatbot (via OpenRouter) for career queries.
 
-* Predict **natural aptitude** using ML from test scores or behavioral patterns.
-* Extract **goals and interests** using NLP from text/audio inputs.
-* Map **skills and experiences** using embeddings and match with industry profiles.
-* Recommend personalized **career paths** based on Indian education routes and competitive exams.
-* Suggest **learning pathways** based on skill gap analysis (aligned with NEP & current job demands).
+## **Folder Structure**
 
----
+The project is organized as follows.
 
-## 🧠 Core AI Features
+### *Directory Details*
 
-* 📊 **Aptitude Prediction** (ML Regression/Classification)
-* 🧠 **Goal Extraction** (NLP on text/audio responses)
-* 🧩 **Skill Mapping** (Embeddings / Semantic Similarity)
-* 🔁 **Career Recommendation Engine** (Supervised/Unsupervised Learning)
-* 🧮 **Skill Gap Analysis & Learning Suggestions**
-
----
-
-## 🎨 Suggested Enhancements
-
-* 📈 Interactive dashboards for results
-* 🎙️ Voice/text-based user inputs (with NLP support)
-* 🌍 Regional language support (IndicNLP/AI4Bharat)
-* 🔎 Resume/LinkedIn scraping (optional)
-* 📚 NEP-based course suggestions (Coursera, SWAYAM, etc.)
-* 🔄 Real-time recommendation updates as user progresses
-
----
-
-## 🧰 Recommended Stack
-
-* **Frontend**: React.js, Next.js, or Flutter Web
-* **Backend**: Node.js / Python (FastAPI preferred)
-* **ML/NLP**: scikit-learn, spaCy, Transformers, sentence-transformers
-* **Data Storage**: Firebase / MongoDB / PostgreSQL
-* **Deployment**: Vercel, Netlify, or Streamlit Cloud
-* **Design Tool**: Figma / Canva for UX workflows
-
----
-
-## 📁 Project Structure (Suggested)
-
-```bash
-career-guidance-engine/  
-├── public/  
-├── src/  
-│   ├── assets/             # Images, icons  
-│   ├── components/         # UI elements  
-│   ├── layouts/            # Page wrappers  
-│   ├── pages/              # App screens  
-│   ├── routes/             # Routing config  
-│   ├── ml_models/          # Trained models (or API wrappers)  
-│   ├── services/           # API calls / external services  
-│   ├── styles/             # Tailwind, Chakra, etc.  
-│   └── utils/              # NLP / ML helpers  
-├── README.md  
-└── THOUGHTS.md  
+```
+CareerQuestAI/
+├── data/
+│   └── career_data.csv      # Dataset with career profiles and aptitude scores
+├── app.py                   # Main Streamlit application
+├── model.py                 # ML models, question bank, and prediction logic
+├── utils.py                 # Utility functions for text processing and translation
+├── requirements.txt         # Python dependencies
 ```
 
----
+- **data/career_data.csv**: Contains career data (e.g., `career`, `math_score`, `biology_score`) for ML training.
+- **app.py**: Manages the Streamlit UI, user inputs, and result rendering.
+- **model.py**: Includes XGBoost models, Sentence-BERT, and aptitude test questions.
+- **utils.py**: Provides text cleaning, translation, and interest processing functions.
+- **requirements.txt**: Lists pinned dependencies for reproducibility.
 
-## 🏁 Getting Started
 
-### 1. Clone the Repository
+## Technology Stack
+- **Frontend**: Streamlit 1.22.0
+- **Backend**: Python 3.8+
+- **Machine Learning**:
+  - Sentence-BERT (`sentence-transformers==2.2.2`) for interest embedding
+  - XGBoost (`xgboost==1.6.2`) for aptitude and skill gap predictions
+  - Scikit-learn 1.0.2 for data preprocessing
+- **APIs**:
+  - OpenRouter (LLaMA 3.1 8B) for chatbot responses
+  - Hugging Face Whisper for audio transcription
+- **Visualization**: Seaborn 0.11.2, Matplotlib 3.5.3
+- **Dependencies**: Defined in `requirements.txt`
+- **Environment**: Conda (recommended)
 
-```bash
-git clone https://github.com/brainfogdev/hackthehaze-careerengine.git  
-cd hackthehaze-careerengine
+## **Expected Outputs**
+
+Results for sample inputs when processed via Streamlit.
+
+### *Text Input Example*
+
+**Input**:
+
+- Stage: After 12th
+- Stream: PCB
+- Exam: NEET
+- Interests: "medicine, patient care"
+- Aptitude Test: Biology (80%), Verbal (70%)
+
+**Output**:
+
+```
+Career Recommendation: Doctor
+Match Score: High
+Skill Gaps: Improve communication skills
+Job Market Demand: 85.0%
+Output displayed in Streamlit interface
 ```
 
-### 2. Install Dependencies
+### *Voice Input Example*
 
-```bash
-npm install  # or pip install -r requirements.txt for backend ML  
+**Input**:
+
+- Voice: "I like coding and technology"
+- Stage: 11th/12th
+- Stream: PCM
+- Aptitude Test: Math (90%), Coding (85%)
+
+**Output**:
+
+```
+Career Recommendation: Software Engineer
+Match Score: High
+Skill Gaps: Enhance problem-solving skills
+Job Market Demand: 90.0%
+Output displayed in Streamlit interface
 ```
 
-### 3. Start the App
+## **Step-by-Step Working**
 
-```bash
-npm run dev  # or streamlit run app.py for AI model demo  
-```
+Steps to set up and run the project.
 
----
+### *Prerequisites*
 
-## 📝 Submission Guidelines
+- Anaconda at `C:\Users\THINKPAD\.conda`.
+- VS Code with Python extension.
+- Git for version control.
+- Python 3.8 in `career_guidance` Conda environment.
 
-### 1️⃣ Fork This Repo
+### *Step 1: Clone the Repository*
 
-> Click **Fork**, then clone your copy and start building your solution.
+1. Open Anaconda Prompt.
 
-### 2️⃣ Build Your Solution
+2. Navigate to:
 
-Develop an AI-guided platform that’s:
+   ```
+   cd C:\Users\THINKPAD\CareerQuestAI
+   ```
 
-* 💡 Smart and insightful
-* 📱 Mobile-first and accessible
-* 🌐 Indian ecosystem-aware
+3. Clone (if not already local):
 
-### 3️⃣ Include the Following in Your Repo
+   ```
+   git clone https://github.com/your-username/CareerQuestAI.git
+   ```
 
-📄 `README.md`
+4. Enter directory:
 
-* What your app does
-* Tech stack used
-* How to run
-* Screenshots or videos
+   ```
+   cd CareerQuestAI
+   ```
 
-🧠 `THOUGHTS.md`
+### *Step 2: Set Up Conda Environment*
 
-* Product thinking and UX decisions
-* ML/NLP model choices
-* Learnings and challenges
-* Future roadmap
+1. Activate environment:
 
-🤖 `models/` (optional)
+   ```
+   conda activate career_guidance
+   ```
 
-* Jupyter notebooks, model files, or HuggingFace links
+2. Install dependencies:
 
-🎨 `figma/` (optional)
+   ```
+   pip install -r requirements.txt
+   ```
 
-* Wireframes, mockups, or export files
+### *Step 3: Verify Input Files*
 
-### 4️⃣ (Optional) Deploy Your Project
+Ensure `data/` contains:
 
-Host on Vercel, Streamlit, Netlify, or HuggingFace Spaces. Include your **live URL** in the README.
+- `career_data.csv`
 
-### 5️⃣ Submit on Unstop
+### *Step 4: Run Streamlit App*
 
-Submit the following:
+1. Launch:
 
-* 🔗 GitHub Repository
-* 🔗 Live App Link (if any)
+   ```
+   streamlit run app.py
+   ```
 
----
+2. Open `http://localhost:8501`.
 
-## 💡 Tips to Stand Out
+3. Input interests, academic details, and take the aptitude test to view results.
 
-* Design with **school and college students** in mind
-* Explain the **career paths clearly** (with links to actual exams/jobs)
-* Add **regional language** support for better accessibility
-* Include **AI Explainability** (why a path was suggested)
-* Go beyond “tech” — think **teacher & parent experience** too
+### *Step 5: Verify Outputs*
 
----
+1. Check Streamlit interface for recommendations and job market charts.
 
-## 🏆 Build Futures. Empower Dreams. Guide Millions.
+2. Verify session state in memory for saved inputs.
 
-India needs smarter tools for smarter choices.
-Make this engine the **future of education meets AI**.
+### *Step 6: Push to GitHub*
 
-**Hack the haze. Shape the journey.** 🚀🎓
+1. Commit changes:
+
+   ```
+   git add .
+   git commit -m "Updated README formatting"
+   git push origin main
+   ```
+
+## Future Improvements
+
+To enhance CareerQuestAI’s functionality and impact, the following enhancements are planned:
+
+Improved Model Precision: Incorporate advanced models (e.g., transformer-based classifiers) for more accurate career predictions.
+
+Real-Time Market Data: Integrate APIs from job platforms (e.g., Naukri, LinkedIn) for dynamic demand insights.
+
+Additional Language Support: Expand to include regional languages like Tamil or Bengali.
+
+Adaptive Assessments: Implement dynamic question difficulty based on user responses using item response theory.
+
+Cloud Deployment: Host on cloud platforms (e.g., AWS, Heroku) for broader accessibility.
+
+Skill Development Integration: Link with e-learning platforms to recommend courses for skill gaps.

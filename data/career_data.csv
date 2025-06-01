@@ -1,0 +1,11 @@
+stream,exam,interests,math_score,biology_score,physics_score,chemistry_score,verbal_score,analytical_score,communication_score,technical_score,career
+PCB,NEET,"medicine, helping people",60,85,70,75,80,70,85,50,Doctor
+PCB,NEET,"biology, patient care",55,90,65,70,85,75,90,45,Nurse
+PCM,JEE,"coding, technology",85,50,80,75,70,80,65,90,Software Engineer
+PCM,JEE,"math, engineering",90,45,85,80,65,85,60,85,Mechanical Engineer
+Commerce,CAT,"business, finance",75,40,50,55,80,85,85,70,MBA
+Commerce,CA,"accounting, taxes",80,35,45,50,75,80,80,65,Chartered Accountant
+Arts,CLAT,"law, justice",60,50,55,50,90,85,85,55,Lawyer
+Arts,UPSC,"history, public service",65,55,50,45,85,90,90,50,Civil Servant
+PCB,NEET,"research, biology",70,88,68,72,75,80,80,60,Biomedical Scientist
+PCM,GATE,"coding, AI",88,48,82,78,68,82,62,92,Data Scientist
