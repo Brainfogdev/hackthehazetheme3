@@ -1,0 +1,20 @@
+{
+  "engineering": {
+    "branches": ["Computer Science", "Mechanical", "Electrical", "Civil", "Electronics"],
+    "topExams": ["JEE Main", "JEE Advanced", "BITSAT"],
+    "salaryRange": "6-30 LPA",
+    "jobMarket": "High demand"
+  },
+  "medical": {
+    "specializations": ["MBBS", "BDS", "BAMS", "BHMS", "Nursing"],
+    "topExams": ["NEET", "AIIMS", "JIPMER"],
+    "salaryRange": "8-25 LPA",
+    "jobMarket": "Stable demand"
+  },
+  "commerce": {
+    "fields": ["CA", "CS", "CMA", "Banking", "Finance"],
+    "topExams": ["CA Foundation", "CLAT", "IPMAT"],
+    "salaryRange": "5-20 LPA",
+    "jobMarket": "Growing"
+  }
+}
